@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+	<body th:fragment="header">
+		<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" th:fragment="header" role="navigation">
+		    <div class="container-fluid">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#" th:href="@{/}"><strong th:text="#{project.title}"></strong></a>
+		        </div>
+		    </div>
+		</nav>
+		<br/>
+		<br/>
+		<br/>
+	</body>
+</html>
