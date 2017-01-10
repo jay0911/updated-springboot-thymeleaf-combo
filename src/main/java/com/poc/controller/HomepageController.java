@@ -31,6 +31,11 @@ public class HomepageController {
 		return "pages/index";
 	}
 	
+	@GetMapping("/actionsheet")
+	public String actionsheet(){		
+		return "pages/actionsheet";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		

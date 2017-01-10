@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+
+<title>Action sheet</title> 
+	<link rel="stylesheet" href="../../static/css/ionic.min.css" th:href="@{/css/ionic.min.css}" />
+ 	<script src="../../static/js/ionic.bundle.min.js" th:src="@{/js/ionic.bundle.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/actionsheet.js" th:src="@{/js/actionsheet.js}"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="todoCtrl">
+
+<button class="button button-full button-positive" ng-click="show()">
+ {{ showaction }}
+</button>
+
+</body>
+</html>
