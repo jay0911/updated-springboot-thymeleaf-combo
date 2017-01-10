@@ -26,6 +26,11 @@ public class HomepageController {
 		return "pages/homepage";
 	}
 	
+	@GetMapping("/ionic")
+	public String ionic(){		
+		return "pages/index";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		
