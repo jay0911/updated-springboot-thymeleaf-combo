@@ -36,6 +36,11 @@ public class HomepageController {
 		return "pages/actionsheet";
 	}
 	
+	@GetMapping("/backdrop")
+	public String backdrop(){		
+		return "pages/backdrop";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		
@@ -43,4 +48,5 @@ public class HomepageController {
 		customer.setName(customer.getName() + " your name is");
 		return "pages/result";
 	}
+
 }
