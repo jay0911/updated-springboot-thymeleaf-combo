@@ -41,6 +41,11 @@ public class HomepageController {
 		return "pages/backdrop";
 	}
 	
+	@GetMapping("/ionrefresher")
+	public String refresher(){		
+		return "pages/ionrefresher";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		

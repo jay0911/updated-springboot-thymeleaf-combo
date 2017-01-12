@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Back Drop</title> 
+	<link rel="stylesheet" href="../../static/css/ionic.min.css" th:href="@{/css/ionic.min.css}" />
+ 	<script src="../../static/js/ionic.bundle.min.js" th:src="@{/js/ionic.bundle.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/backdrop.js" th:src="@{/js/backdrop.js}"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="todoCtrl" style="cursor: auto">
+
+   <ion-header-bar class="bar-positive">
+      <h1 class="title">{{ titlename }}</h1>
+   </ion-header-bar>
+
+   <ion-content>
+   <button class="button" ng-click="action()">{{ buttonname }}</button>
+   </ion-content>
+
+</body>
+</html>
