@@ -41,6 +41,11 @@ public class HomepageController {
 		return "pages/backdrop";
 	}
 	
+	@GetMapping("/checkbox")
+	public String checkbox(){		
+		return "pages/checkbox";
+	}
+	
 	@GetMapping("/ionrefresher")
 	public String refresher(){		
 		return "pages/ionrefresher";
