@@ -51,6 +51,16 @@ public class HomepageController {
 		return "pages/ionrefresher";
 	}
 	
+	@GetMapping("/ionform")
+	public String ionsubmit(){		
+		return "pages/ionform";
+	}
+	
+	@GetMapping("/ionradio")
+	public String ionradio(){		
+		return "pages/ionradio";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		

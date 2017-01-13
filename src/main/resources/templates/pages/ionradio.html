@@ -1,0 +1,50 @@
+
+    
+    
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Ion Refresher</title> 
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="../../static/js/ionradio.js" th:src="@{/js/ionradio.js}"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+	
+	<ion-header-bar class="bar-positive">
+      <h1 class="title">{{ titlename }}</h1>
+    </ion-header-bar>
+             
+    <ion-content>
+      
+      <div class="list">
+        
+        <div class="item item-divider"> 
+          Clientside, Selected Value: {{ data.clientSide }}
+        </div>
+        
+        <ion-radio ng-repeat="item in clientSideList"
+                   ng-value="item.value"
+                   ng-model="dataclient.clientSide">
+          {{ item.text }}
+        </ion-radio>
+        
+        <div class="item item-divider">
+          Serverside, Selected Value: {{ data.serverSide }}
+        </div>
+        
+        <ion-radio ng-repeat="item in serverSideList"
+                   ng-value="item.value"
+                   ng-model="dataserver.serverSide"
+                   ng-change="serverSideChange(item)"
+                   name="server-side">
+          {{ item.text }}
+        </ion-radio>
+        
+      </div>
+      
+    </ion-content>
+</body>
+</html>
