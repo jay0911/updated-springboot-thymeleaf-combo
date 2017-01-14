@@ -52,7 +52,8 @@ public class HomepageController {
 	}
 	
 	@GetMapping("/ionform")
-	public String ionsubmit(){		
+	public String ionsubmit(Model model){	
+		model.addAttribute("customer",new Customer());
 		return "pages/ionform";
 	}
 	
@@ -66,6 +67,16 @@ public class HomepageController {
 		
 		customer.setAddress(customer.getAddress() + " haha");
 		customer.setName(customer.getName() + " your name is");
+		return "pages/result";
+	}
+	
+	@PostMapping("/ionsubmit")
+	public String postionresult(Model model,@ModelAttribute("customer") Customer customer){
+		
+		customer.setAddress(customer.getAddress() + " dumaan sa server side");
+		customer.setName(customer.getName() + " dumaan sa server side");
+		customer.setGender(customer.getGender() + " dumaan sa server side");
+		
 		return "pages/result";
 	}
 
