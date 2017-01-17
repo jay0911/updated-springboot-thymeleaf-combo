@@ -16,4 +16,14 @@ angular.module('myApp', ['ionic'])
   
   $scope.customerinterested = {checked : true};
   
+  $scope.onsubmit = function(){
+	  var helo = "hahah"
+	  alert(helo);
+	  var el1 = angular.element(document.querySelector('#name')).val();
+	  var el2 = angular.element(document.querySelector('#address')).val();
+	  alert(el1);
+	  alert(el2);
+	  
+  }
+  
 });

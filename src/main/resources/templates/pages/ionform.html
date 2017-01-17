@@ -14,18 +14,19 @@
       <h1 class="title">{{ titlename }}</h1>
     </ion-header-bar>
 	<ion-content>
-		<form th:action="@{/ionsubmit}" th:object="${customer}" method="post" name="simpleionform">
+		<form th:action="@{/ionsubmit}" ng-submit="onsubmit()" th:object="${customer}" method="post" name="simpleionform">
 			<div class="list">
 			<div class="item item-divider">
 		    	{{ info }}
 		  	</div>
 			<label class="item item-input item-floating-label">
 			    <span class="input-label">{{ name }}</span>
-			    <input type="text" th:field="*{name}" placeholder="{{ name }}" th:required="required" />
+			    <input type="text" id="name" th:field="*{name}" placeholder="{{ name }}" th:required="required" />
+				<i class="icon ion-ios-telephone-outline">info</i>
 			</label>
 			<label class="item item-input item-floating-label">
 			   <span class="input-label">{{ address }}</span>
-			   <input type="text" th:field="*{address}" placeholder="{{ address }}" th:required="required" />
+			   <input type="text" id="address" th:field="*{address}" placeholder="{{ address }}" th:required="required" />
 			</label>
 			<div class="item item-divider">
 		    	{{ classgender }}
@@ -45,8 +46,8 @@
 			<input class="button button-block button-balanced" type="submit" value="Submit" ng-disabled="simpleionform.$invalid" />
 			
 <!-- 			hidden field for storage of radio and toggle btn -->
-			<input type="text" ng-hide="true" th:field="*{gender}" ng-value="gendervalue.value" />
-			<input type="text" ng-hide="true" th:field="*{interested}" ng-value="customerinterested.checked" />
+			<input type="text" id="gender" ng-hide="true" th:field="*{gender}" ng-value="gendervalue.value" />
+			<input type="text" id="interested" ng-hide="true" th:field="*{interested}" ng-value="customerinterested.checked" />
 		</form>
 	</ion-content>
 </body>
