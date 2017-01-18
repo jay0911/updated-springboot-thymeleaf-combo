@@ -62,6 +62,11 @@ public class HomepageController {
 		return "pages/ionradio";
 	}
 	
+	@GetMapping("/ionlist")
+	public String ionlist(){		
+		return "pages/ionlist";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		
