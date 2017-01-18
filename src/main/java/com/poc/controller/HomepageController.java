@@ -61,10 +61,15 @@ public class HomepageController {
 	public String ionradio(){		
 		return "pages/ionradio";
 	}
-	
+
 	@GetMapping("/ionloading")
 	public String ionloading(){		
 		return "pages/ionloading";
+	}
+	
+	@GetMapping("/ionlist")
+	public String ionlist(){		
+		return "pages/ionlist";
 	}
 	
 	@PostMapping("/submit")

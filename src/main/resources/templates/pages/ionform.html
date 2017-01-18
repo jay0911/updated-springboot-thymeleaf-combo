@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 
-<title>Ion Refresher</title> 
+<title>Ion Form</title> 
     <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
     <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
     <script type="text/javascript" src="../../static/js/ionform.js" th:src="@{/js/ionform.js}"></script>
@@ -10,11 +10,11 @@
 </head>
 <body ng-app="myApp" ng-controller="MyController">
 
-    <ion-header-bar class="bar-dark">
+    <ion-header-bar class="bar-positive">
       <h1 class="title">{{ titlename }}</h1>
     </ion-header-bar>
 	<ion-content>
-		<form th:action="@{/ionsubmit}" ng-submit="return onsubmit()" th:object="${customer}" method="post" name="simpleionform">
+		<form th:action="@{/ionsubmit}" ng-submit="onsubmit()" th:object="${customer}" method="post" name="simpleionform" novalidation="" >
 			<div class="list">
 			<div class="item item-divider">
 		    	{{ info }}
@@ -22,12 +22,12 @@
 			<label class="item item-input item-floating-label">
 			    <span class="input-label">Name</span>
 			    <input type="text" name="name" th:field="*{name}" placeholder="name" ng-model="name" th:required="required" />		   
-				<i  ng-show="simpleionform.name.$error.required" class="icon ion-ios-telephone-outline">required</i>
+				<i  ng-show="submitted &amp;&amp; simpleionform.name.$error.required" class="icon ion-heart">required</i>
 			</label>
 			<label class="item item-input item-floating-label">
 			   <span class="input-label">Address</span>
 			   <input type="text" name="address" th:field="*{address}" placeholder="address" ng-model="address" th:required="required" />
-			   <i  ng-show="simpleionform.address.$error.required" class="icon ion-ios-telephone-outline">required</i>
+			   <i  ng-show="submitted &amp;&amp; simpleionform.address.$error.required" class="icon ion-ios-telephone-outline">required</i>
 			</label>
 			<div class="item item-divider">
 		    	{{ classgender }}
@@ -44,12 +44,23 @@
 			<ion-toggle ng-model="customerinterested.checked" toggle-class="toggle-calm">{{ yesno }}</ion-toggle>
 	
 			</div>
-			<input class="button button-block button-balanced" type="submit" value="Submit" />
+			
+			<button type="submit" class="button button-block button-balanced" ng-click="submitted=true">Submit</button>
 			
 <!-- 			hidden field for storage of radio and toggle btn -->
 			<input type="text" id="gender" ng-hide="true" th:field="*{gender}" ng-value="gendervalue.value" />
 			<input type="text" id="interested" ng-hide="true" th:field="*{interested}" ng-value="customerinterested.checked" />
 		</form>
 	</ion-content>
+	
+	<ion-footer-bar align-title="left" class="bar-positive">
+			  <div class="buttons">
+			    <button class="button">Left Button</button>
+			  </div>
+			  <h1 class="title">Title!</h1>
+			  <div class="buttons" ng-click="doSomething()">
+			    <button class="button icon-left ion-home">Right Button</button>
+			  </div>
+	</ion-footer-bar>
 </body>
 </html>
