@@ -77,6 +77,11 @@ public class HomepageController {
 		return "pages/ionmodal";
 	}
 	
+	@GetMapping("/ionnav")
+	public String ionnav(){		
+		return "pages/ionnav";
+	}
+	
 	@PostMapping("/submit")
 	public String posthomepage(Model model,@ModelAttribute("customer") Customer customer){
 		
