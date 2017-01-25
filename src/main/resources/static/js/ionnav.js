@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('ionicApp', ['ionic','ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -6,13 +6,13 @@ angular.module('ionicApp', ['ionic'])
     .state('tabs', {
       url: "/tab",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "partials/tabs.html"
     })
     .state('tabs.home', {
       url: "/home",
       views: {
         'home-tab': {
-          templateUrl: "templates/home.html",
+          templateUrl: "partials/home.html",
           controller: 'HomeTabCtrl'
         }
       }
@@ -21,7 +21,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/facts",
       views: {
         'home-tab': {
-          templateUrl: "templates/facts.html"
+          templateUrl: "partials/facts.html"
         }
       }
     })
@@ -29,7 +29,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/facts2",
       views: {
         'home-tab': {
-          templateUrl: "templates/facts2.html"
+          templateUrl: "partials/facts2.html"
         }
       }
     })
@@ -37,7 +37,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/about",
       views: {
         'about-tab': {
-          templateUrl: "templates/about.html"
+          templateUrl: "partials/about.html"
         }
       }
     })
@@ -45,7 +45,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/navstack",
       views: {
         'about-tab': {
-          templateUrl: "templates/nav-stack.html"
+          templateUrl: "partials/nav-stack.html"
         }
       }
     })
@@ -53,7 +53,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/contact",
       views: {
         'contact-tab': {
-          templateUrl: "templates/contact.html"
+          templateUrl: "partials/contact.html"
         }
       }
     });
