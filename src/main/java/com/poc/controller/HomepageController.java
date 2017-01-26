@@ -31,6 +31,11 @@ public class HomepageController {
 		return "pages/index";
 	}
 	
+	@GetMapping("/popover")
+	public String popover(){		
+		return "pages/popover";
+	}
+	
 	@GetMapping("/actionsheet")
 	public String actionsheet(){		
 		return "pages/actionsheet";
