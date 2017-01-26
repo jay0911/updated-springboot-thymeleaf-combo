@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>pop up</title> 
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="../../static/js/popup.js" th:src="@{/js/popup.js}"></script>
+
+</head>
+ 
+  <body class="padding" ng-app="mySuperApp" ng-controller="PopupCtrl">
+    <button class="button button-dark" ng-click="showPopup()">
+      show
+    </button>
+    <button class="button button-primary" ng-click="showConfirm()">
+      Confirm
+    </button>
+    <button class="button button-positive" ng-click="showAlert()">
+      Alert
+    </button>
+    
+    <script id="popup-template.html" type="text/ng-template">
+      <input ng-model="data.wifi" type="text" placeholder="Password" />
+    </script>
+  </body>
+  
+</html>

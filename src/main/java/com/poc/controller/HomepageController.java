@@ -56,6 +56,11 @@ public class HomepageController {
 		return "pages/ionrefresher";
 	}
 	
+	@GetMapping("/popup")
+	public String popup(){
+		return "pages/popup";
+	}
+	
 	@GetMapping("/ionform")
 	public String ionsubmit(Model model){	
 		model.addAttribute("customer",new Customer());
