@@ -87,6 +87,16 @@ public class HomepageController {
 		return "pages/ionmodal";
 	}
 	
+	@GetMapping("/infinitescroll")
+	public String infinitescroll(){		
+		return "pages/infinitescroll";
+	}
+	
+	@GetMapping("/infinitescroll2")
+	public String infinitescroll2(){		
+		return "pages/infinitescroll2";
+	}
+	
 	@GetMapping("/ionnav")
 	public String ionnav(){		
 		return "pages/ionnav";

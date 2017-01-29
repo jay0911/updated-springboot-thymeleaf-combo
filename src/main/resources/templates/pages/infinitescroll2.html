@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Ion List</title> 
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="../../static/js/infinitescroll2.js" th:src="@{/js/infinitescroll2.js}"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="data.showDelete = !data.showDelete"></button>
+      </div>
+      <h1 class="title">{{ title }}</h1>
+    </ion-header-bar>
+
+    <ion-content>
+      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+      
+      <ion-list show-delete="data.showDelete">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}" class="item-remove-animate">
+          Item {{ item.id }}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+        </ion-item>
+
+      </ion-list>
+      
+      <ion-infinite-scroll distance="1%"
+                     on-infinite="loadMoreData()"
+                     >
+                     </ion-infinite-scroll>
+
+    </ion-content>
+
+</body>
+</html>
