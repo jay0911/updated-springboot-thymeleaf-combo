@@ -77,6 +77,11 @@ public class HomepageController {
 		return "pages/ionloading";
 	}
 	
+	@GetMapping("/sidemenu")
+	public String sidemenu(){		
+		return "pages/sidemenu";
+	}
+	
 	@GetMapping("/ionlist")
 	public String ionlist(){		
 		return "pages/ionlist";

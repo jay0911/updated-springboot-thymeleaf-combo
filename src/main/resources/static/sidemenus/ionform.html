@@ -1,0 +1,53 @@
+    <ion-view view-title="ION FORM">
+    
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">{{ titlename }}</h1>
+    </ion-header-bar>
+	<ion-content>
+		<form  method="post" name="simpleionform" ng-submit="onsubmit()" novalidation="" >
+			<div class="list">
+			<div class="item item-divider">
+		    	{{ info }}
+		  	</div>
+			<label class="item item-input item-floating-label">
+			    <span class="input-label">Name</span>
+			    <input type="text" name="name"  placeholder="name" ng-model="customer.name" required="required" />		   
+				<i  ng-show="submitted &amp;&amp; simpleionform.name.$error.required" class="icon ion-heart">required</i>
+			</label>
+			<label class="item item-input item-floating-label">
+			   <span class="input-label">Address</span>
+			   <input type="text" name="address"  placeholder="address" ng-model="customer.address" required="required" />
+			   <i  ng-show="submitted &amp;&amp; simpleionform.address.$error.required" class="icon ion-ios-telephone-outline">required</i>
+			</label>
+			<div class="item item-divider">
+		    	{{ classgender }}
+		  	</div>
+			<ion-radio ng-repeat="item in gender"
+	                   ng-value="item.value"
+	                   ng-model="customer.gender">
+	          {{ item.text }}
+	        </ion-radio>
+	        
+	        <div class="item item-divider">
+		    	{{ isinterested }}
+		  	</div>
+			<ion-toggle ng-model="customer.interested" toggle-class="toggle-calm">{{ yesno }}</ion-toggle>
+	
+			</div>
+			
+			<button type="submit" class="button button-block button-balanced" ng-click="submitted=true">Submit</button>
+
+		</form>
+	</ion-content>
+	
+	<ion-footer-bar align-title="left" class="bar-positive">
+			  <div class="buttons">
+			    <a class="button icon ion-home" href="#/tab/home"> back homes</a>
+			  </div>
+			  <h1 class="title">Title!</h1>
+			  <div class="buttons" ng-click="doSomething()">
+			    <button class="button icon-left ion-home">Right Button</button>
+			  </div>
+	</ion-footer-bar>
+	
+	</ion-view>
