@@ -87,6 +87,11 @@ public class HomepageController {
 		return "pages/ionlist";
 	}
 	
+	@GetMapping("/ionsearch")
+	public String ionsearch(){
+		return "pages/ionsearch";
+	}
+	
 	@GetMapping("/ionmodal")
 	public String ionmodal(){		
 		return "pages/ionmodal";

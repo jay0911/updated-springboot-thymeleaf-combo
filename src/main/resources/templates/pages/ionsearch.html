@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="ionicApp">
+<head>
+
+<title>ion search</title> 
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="../../static/js/ionsearch.js" th:src="@{/js/ionsearch.js}"></script>
+    <style>
+   		.item-input-wrapper input {
+    		width: 100%;
+		}
+		
+		.search-wrapper-light {
+		    border-bottom: 2px solid rgba(255,255,255,0.5);
+		    background: none;
+		    border-radius: 0;
+		    margin-left: 5px;
+		    margin-right: 5px;
+		}
+		
+		.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+		    color: #ffffff;
+		}
+    </style>
+</head>
+  <body ng-controller="MyController">       
+    
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="data.showDelete = !data.showDelete"></button>
+      </div>
+      <h1 class="title">Ion search</h1>
+    </ion-header-bar>
+	<ion-content>
+	           <div class="bar bar-header item-input-inset">
+                	<div class="item-input-wrapper">
+                        <i class="icon ion-android-search"></i>
+                        <input type="search" id="searchval" placeholder="hello" ng-model="searchval.value" />
+                        <i ng-if="searchval" ng-click="clearSearch()" class="icon ion-close"></i>
+                    </div>
+               </div>
+      <ion-list show-delete="data.showDelete">
+          <ion-item ng-repeat="item in items | filter:searchval" 
+                  item="item"
+                  href="#/item/{{item.id}}" class="item-remove-animate">
+          {{ item.value }}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+	</ion-content>
+
+  </body>
+</html>
