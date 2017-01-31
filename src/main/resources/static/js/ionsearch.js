@@ -14,21 +14,23 @@ angular.module('ionicApp', ['ionic'])
 			  $scope.onItemDelete = function(item) {
 			    $scope.items.splice($scope.items.indexOf(item), 1);
 			  };
-	  $scope.clearSearch = function(){
+	  $scope.clearSearch = function(){	  
 		  $scope.searchval = {};
 	  };
+	  
+	  $scope.searchval = {};
 	
 	  $scope.items = [
-		    { id: 0 , value:"jay" },
-		    { id: 1 , value:"ryan" },
-		    { id: 2 , value:"oliveros" },
-		    { id: 3 , value:"eraine" },
-		    { id: 4 , value:"bernadette" },
-		    { id: 5 , value:"santos" },
-		    { id: 6 , value:"otayde" },
-		    { id: 7 , value:"angeles" },
-		    { id: 8 , value:"jaylord" },
-		    { id: 9 , value:"jaybee" },
-		    { id: 10 , value:"jayson" }
+		    { id: 0 , name:"jay" },
+		    { id: 1 , name:"ryan" },
+		    { id: 2 , name:"oliveros" },
+		    { id: 3 , name:"eraine" },
+		    { id: 4 , name:"bernadette" },
+		    { id: 5 , name:"santos" },
+		    { id: 6 , name:"otayde" },
+		    { id: 7 , name:"angeles" },
+		    { id: 8 , name:"jaylord" },
+		    { id: 9 , name:"jaybee" },
+		    { id: 10 , name:"jayson" }
 		  ];
 });

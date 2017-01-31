@@ -37,15 +37,15 @@
 	           <div class="bar bar-header item-input-inset">
                 	<div class="item-input-wrapper">
                         <i class="icon ion-android-search"></i>
-                        <input type="search" id="searchval" placeholder="hello" ng-model="searchval.value" />
-                        <i ng-if="searchval" ng-click="clearSearch()" class="icon ion-close"></i>
+                        <input type="search" id="searchval" placeholder="hello" data-ng-model="searchval.name" />
+                        <i ng-show="searchval.name.length" data-ng-click="clearSearch()" class="icon ion-close"></i>
                     </div>
                </div>
       <ion-list show-delete="data.showDelete">
           <ion-item ng-repeat="item in items | filter:searchval" 
                   item="item"
                   href="#/item/{{item.id}}" class="item-remove-animate">
-          {{ item.value }}
+          {{ item.name }}
           <ion-delete-button class="ion-minus-circled" 
                              ng-click="onItemDelete(item)">
           </ion-delete-button>
