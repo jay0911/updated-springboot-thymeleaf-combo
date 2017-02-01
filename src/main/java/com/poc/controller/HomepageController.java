@@ -56,6 +56,11 @@ public class HomepageController {
 		return "pages/ionrefresher";
 	}
 	
+	@GetMapping("/iondate")
+	public String iondate(){		
+		return "pages/iondate";
+	}
+	
 	@GetMapping("/popup")
 	public String popup(){
 		return "pages/popup";
