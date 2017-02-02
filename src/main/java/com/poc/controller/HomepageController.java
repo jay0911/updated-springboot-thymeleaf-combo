@@ -1,5 +1,6 @@
 package com.poc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,9 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.poc.model.Customer;
+import com.poc.service.EmailService;
 
 @Controller
 public class HomepageController {
+	
+	@Autowired
+	EmailService emailService;
 	
 	@Value("${name}")
 	String name;
@@ -115,6 +120,12 @@ public class HomepageController {
 	@GetMapping("/ionnav")
 	public String ionnav(){		
 		return "pages/ionnav";
+	}
+	
+	@GetMapping("/sendmail")
+	public String sendmail(){
+		emailService.sendEmail();
+		return "pages/emailsent";
 	}
 	
 	@PostMapping("/submit")
